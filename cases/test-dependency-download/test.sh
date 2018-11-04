@@ -17,8 +17,11 @@ trap clean_up EXIT
 
 mvn -s settings.xml package
 
-# Now we need to test for the creation of this file...
-# And then potentially all the files that were downloaded?
-# /usr/src/mymaven/cases/test-dependency-download/target/hangar-test-project1-0.0.1-SNAPSHOT.jar
+# Test the file we wanted was created.
+[ -s /usr/src/mymaven/cases/test-dependency-download/target/hangar-test-project1-0.0.1-SNAPSHOT.jar ]
 
+# Test that the number of downloaded dependencies and transitive dependencies were correct.
+[ "$(find /usr/src/mymaven/storage/ -type f | wc -l)" -eq "1275" ] 
+
+# Test all passed.
 exit 0

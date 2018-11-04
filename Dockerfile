@@ -11,4 +11,4 @@ RUN export GOPATH=/usr/src/mymaven \
 
 COPY cases /usr/src/mymaven/cases
 
-CMD ./bin/rtf -vv run -x
+CMD ./bin/rtf -v run -x
