@@ -16,8 +16,21 @@
 			<version>${dropwizard.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-	<!--<distributionManagement>
+    <distributionManagement>
 	   <snapshotRepository>
 	      <id>hangar-snapshots</id>
 	      <url>http://${env.HANGAR_URL}/java/snapshots</url>
@@ -26,5 +39,5 @@
 	      <id>hangar-snapshots</id>
 	      <url>http://${env.HANGAR_URL}/java/releases</url>
 	   </repository>
-	</distributionManagement>-->
+	</distributionManagement>
 </project>
